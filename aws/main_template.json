@@ -1,0 +1,26 @@
+{  
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "This template creates an S3 instance with baseline configuration.",
+  "Metadata": {
+    "SolutionData": {
+      "contentVersion": "1.0.0.0",
+      "contentProvider": "Tech Data"
+    }
+  },
+  "Parameters": {
+    "S3BucketName": {
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "TDCSFS3Bucket": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketName": {
+          "Ref": "S3BucketName"
+        },
+        "AccessControl": "Private"
+      }
+    }
+  }
+}
